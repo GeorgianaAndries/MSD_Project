@@ -33,12 +33,12 @@ public class InternController {
         return internService.getAllInterns();
     }
 
-    @GetMapping("/intern/{intern_id}")
+    @GetMapping("/interns/{intern_id}")
     private Intern getInternById(@PathVariable("intern_id") int internId){
         return internService.getInternById(internId);
     }
 
-    @DeleteMapping("/intern/{intern_id}")
+    @DeleteMapping("/interns/{intern_id}")
     private void deleteInternById(@PathVariable("intern_id") int internId){
         internService.delete(internId);
     }

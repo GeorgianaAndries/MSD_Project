@@ -25,9 +25,6 @@ public class Team {
 	@Column(name="project_id")
     private int projectId;
 
-	public int getId() {
-		return id;
-	}
 	
 	public Team() {
 		
@@ -40,7 +37,10 @@ public class Team {
 		this.projectId = projectId;
 	}
 
-
+	public int getId() {
+		return id;
+	}
+	
 	public void setId(int id) {
 		this.id = id;
 	}

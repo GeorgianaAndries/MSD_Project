@@ -39,12 +39,12 @@ public class ProjectController {
 	        return projectService.getAllProjects();
 	    }
 
-	    @GetMapping("/project/{project_id}")
+	    @GetMapping("/projects/{project_id}")
 	    private Project getProjectById(@PathVariable("project_id") int projectId){
 	        return projectService.getProjectById(projectId);
 	    }
 
-	    @DeleteMapping("/project/{project_id}")
+	    @DeleteMapping("/projects/{project_id}")
 	    private void deleteProjectById(@PathVariable("project_id") int projectId){
 	        projectService.delete(projectId);
 	    }

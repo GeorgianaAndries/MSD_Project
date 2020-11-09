@@ -33,12 +33,12 @@ public class TeamController {
         return teamService.getAllTeams();
     }
 
-    @GetMapping("/team/{team_id}")
+    @GetMapping("/teams/{team_id}")
     private Team getTeamById(@PathVariable("team_id") int teamId){
         return teamService.getTeamById(teamId);
     }
     
-    @DeleteMapping("/team/{team_id}")
+    @DeleteMapping("/teams/{team_id}")
     private void deleteTeamById(@PathVariable("team_id") int teamId){
         teamService.delete(teamId);
     }
