@@ -8,8 +8,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Setter
+@Getter
 @EntityListeners(AuditingEntityListener.class)
 @Entity
 @Table(name="teams")
@@ -25,41 +33,4 @@ public class Team {
 	@Column(name="project_id")
     private int projectId;
 
-	
-	public Team() {
-		
-	}
-
-	public Team(int id, String teamName, int projectId) {
-		super();
-		this.id = id;
-		this.teamName = teamName;
-		this.projectId = projectId;
-	}
-
-	public int getId() {
-		return id;
-	}
-	
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getTeamName() {
-		return teamName;
-	}
-
-	public void setTeamName(String teamName) {
-		this.teamName = teamName;
-	}
-
-	public int getProjectId() {
-		return projectId;
-	}
-
-	public void setProjectId(int projectId) {
-		this.projectId = projectId;
-	}
-	
-	
 }
