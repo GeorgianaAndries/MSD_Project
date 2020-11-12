@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,8 @@ import com.example.demo.dto.UserDto;
 import com.example.demo.model.User;
 import com.example.demo.service.UserService;
 
+import javax.validation.Valid;
+
 @RestController
 public class UserController {
 	private final UserService userService;
@@ -27,7 +30,14 @@ public class UserController {
 		this.userService = userService;
 		this.modelMapper = modelMapper;
 	}
-	
+
+    @PostMapping("/users")
+    private ResponseEntity<String> saveUser(@Valid @RequestBody UserDto userDto){
+        User userCreated = userService.save(userDto);
+        UserDto user = modelMapper.map(userCreated, UserDto.class);
+        return ResponseEntity.ok("User is valid");
+    }
+
 	@GetMapping("/users")
     private List<UserDto> getUsers(){
         return userService.getAllUsers();
@@ -47,13 +57,6 @@ public class UserController {
     private void update(@RequestBody UserDto userDto){
         userService.update(userDto);
     }
-    
-    @PostMapping("/users")
-    private int saveUser(@RequestBody UserDto userDto){
-        User userCreated = userService.save(userDto);
-        UserDto user = modelMapper.map(userCreated, UserDto.class);
-        return user.getId();
-    }
-	
 	
 }
+
