@@ -1,0 +1,65 @@
+<div class="custom-dialog-container">
+    <h1 mat-dialog-title>Edit the details you want:</h1>
+    <div mat-dialog-content class="req-content">
+        <form  editInternForm="ngForm">
+            <div class="form-group">
+                <label for="nume">First name:</label>
+                <input type="text" class="form-control" id="nume" required [(ngModel)]="fromPage.nume"  name="nume">
+            </div>
+            <div class="form-group">
+                <label for="prenume">Last name:</label>
+                <input type="text" class="form-control" id="prenume" required [(ngModel)]="fromPage.prenume"  name="prenume">
+            </div>
+            <div class="form-group">
+                <label for="oras">Location:</label>
+                <input type="text" class="form-control" id="oras" [(ngModel)]="fromPage.oras"  name="oras">
+            </div>
+            <div class="form-group">
+                <label for="tel">Phone:</label>
+                <input type="tel" class="form-control" id="tel" [(ngModel)]="fromPage.tel"  name="tel">
+            </div>
+            <div class="form-group">
+                <label for="mail">Mail:</label>
+                <input type="email" class="form-control" id="mail" [(ngModel)]="fromPage.mail"  name="mail">
+            </div>
+            <div class="form-group">
+                <label for="team">Team: </label>
+                <select class="form-control" id="team" [(ngModel)]="fromPage.team"  name="team">
+                    <option *ngFor="let team of teams" [value]="team">{{team}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="project">Project: </label>
+                <select class="form-control" id="project" [(ngModel)]="fromPage.project"  name="project">
+                    <option *ngFor="let proj of projects" [value]="proj">{{proj}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="role">Role: </label>
+                <select class="form-control" id="role" [(ngModel)]="fromPage.role"  name="role">
+                    <option *ngFor="let role of roles" [value]="role">{{role}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="paid">Paid internship: </label>
+                <select class="form-control" id="paid" [(ngModel)]="fromPage.paid"  name="paid">
+                    <option *ngFor="let p of paid" [value]="p">{{p}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="start">Start date:</label>
+                <input type="date" id="start" [(ngModel)]="fromPage.start" name="start">
+            </div>
+            <div class="form-group">
+                <label for="end">End date:</label>
+                <input type="date" id="end" [(ngModel)]="fromPage.end" name="end">
+            </div>
+
+        </form>
+
+    </div>
+    <div mat-dialog-actions class="req-actions">
+        <button mat-button (click)='onCloseDialog()' class="closeDiag-btn">Dismiss</button>
+        <button mat-button  type="submit" class="submit-btn" (click)='onSaveChanges()'>Save changes</button>
+    </div>
+</div>

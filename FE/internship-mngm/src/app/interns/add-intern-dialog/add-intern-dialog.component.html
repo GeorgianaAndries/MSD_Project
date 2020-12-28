@@ -1,0 +1,74 @@
+<div class="custom-dialog-container">
+    <h1 mat-dialog-title>Complete the details about the new intern:</h1>
+    <div mat-dialog-content class="req-content">
+        <form #newInternForm="ngForm">
+            <div class="form-group">
+                <label for="nume">First name:</label>
+                <input type="text" class="form-control" id="nume" required [(ngModel)]="fromDialog.nume" #nume="ngModel"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label for="prenume">Last name:</label>
+                <input type="text" class="form-control" id="prenume" required [(ngModel)]="fromDialog.prenume"
+                    #prenume="ngModel" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label for="oras">Location:</label>
+                <input type="text" class="form-control" id="oras" [(ngModel)]="fromDialog.oras" #oras="ngModel"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label for="tel">Phone:</label>
+                <input type="tel" class="form-control" id="tel" [(ngModel)]="fromDialog.tel" #tel="ngModel"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label for="mail">Mail:</label>
+                <input type="email" class="form-control" id="mail" [(ngModel)]="fromDialog.mail" #mail="ngModel"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label for="team">Team: </label>
+                <select class="form-control" id="team" [(ngModel)]="fromDialog.team" #team="ngModel"
+                    [ngModelOptions]="{standalone: true}">
+                    <option *ngFor="let team of teams" [value]="team">{{team}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="project">Project: </label>
+                <select class="form-control" id="project" [(ngModel)]="fromDialog.project" #project="ngModel"
+                    [ngModelOptions]="{standalone: true}">
+                    <option *ngFor="let proj of projects" [value]="proj">{{proj}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="role">Role: </label>
+                <select class="form-control" id="role" [(ngModel)]="fromDialog.role" #role="ngModel"
+                    [ngModelOptions]="{standalone: true}">
+                    <option *ngFor="let role of roles" [value]="role">{{role}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="paid">Paid internship: </label>
+                <select class="form-control" id="paid" [(ngModel)]="fromDialog.paid" #paid="ngModel"
+                    [ngModelOptions]="{standalone: true}">
+                    <option *ngFor="let p of paid" [value]="p">{{p}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="start">Start date:</label>
+                <input type="date" id="start" name="start" [(ngModel)]="fromDialog.start">
+            </div>
+            <div class="form-group">
+                <label for="end">End date:</label>
+                <input type="date" id="end" name="end" [(ngModel)]="fromDialog.end">
+            </div>
+
+        </form>
+
+    </div>
+    <div mat-dialog-actions class="req-actions">
+        <button mat-button (click)='onCloseDialog()' class="closeDiag-btn">Dismiss</button>
+        <button mat-button type="submit" class="submit-btn" (click)='onSendDialog()'>Submit</button>
+    </div>
+</div>

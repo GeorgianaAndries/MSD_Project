@@ -28,13 +28,13 @@
         </mat-nav-list>
         <mat-nav-list>
 			<mat-list-item class="item-list">
-				<span class="full-width" *ngIf="isExpanded || isShowing">Interns</span>
+				<span class="full-width" *ngIf="isExpanded || isShowing" [routerLink]="['/management', 'interns']">Interns</span>
 				<mat-icon mat-list-icon>groups</mat-icon>
 			</mat-list-item>
         </mat-nav-list>
         <mat-nav-list>
 			<mat-list-item class="item-list">
-				<span class="full-width" *ngIf="isExpanded || isShowing">Projects</span>
+				<span class="full-width" *ngIf="isExpanded || isShowing" [routerLink]="['/management', 'projects']">Projects</span>
 				<mat-icon mat-list-icon>apps</mat-icon>
 			</mat-list-item>
 		</mat-nav-list>

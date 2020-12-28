@@ -1,0 +1,46 @@
+.custom-dialog-container{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+}
+
+#mat-dialog-title-0 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;   
+}
+
+textarea {
+    resize: none;
+    
+ }
+
+ .closeDiag-btn {
+     background: #a2a0a0;
+     color: white;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+
+ }
+
+ .submit-btn {
+    background: #985E6D;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+
+ }
+
+ .closeDiag-btn:focus {
+    outline: 0;
+}
+
+.submit-btn:focus {
+    outline: 0;
+}
+
+input, select, textarea {
+    font-size: medium;
+}
+
+.form-group {
+    padding-bottom: .5rem;
+}
+
+input, select {
+    margin-left: 0.5rem;
+}

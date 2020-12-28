@@ -1,0 +1,119 @@
+.req-container {
+    background: #fbf7f5;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+}
+.example-card {
+    max-width: 260px;
+    min-width: 260px;
+    min-height: 450px;
+    max-height: 450px;
+    margin: 0.5rem;
+    background: #ffffff5e;
+    color: #e56868;
+    mat-card-subtitle{
+        color: #e56868;
+    }
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+  }
+.example-card:hover{
+    color:#985E6D;
+    border: 1px solid #e62127;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+}  
+
+.btns-containter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.request-btn {
+    color: white;
+    background: #494B6B;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+.request-btn:focus {
+    outline: 0;
+}
+
+#pagination{   
+    background: #985E6D;
+    bottom: 0;
+    left:0; 
+    right:0;
+    max-height: 50px;
+    margin-top: 5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+    
+}
+
+mat-card-content {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 276px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+}
+
+mat-card-header {
+    color: #985E6D;
+}
+
+p.ng-star-inserted {
+    color: rgb(143, 136, 136);
+}
+
+.search {
+    font: medium;
+    color: gray;
+    padding: 6px;
+    border: 2px solid #f79b9b;
+    border-radius: 3%;
+}
+.search:focus {
+    outline: 0;
+}
+
+.search-container {
+    margin-top: 1rem;
+}
+
+.btn-cerere {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    justify-content: center;
+    bottom: 1rem;
+    position: absolute;
+    & button{
+        border: 0.2rem;
+        border-radius: 5%;
+        color: white;
+        background: #494B6B;
+        margin-left: 0.8rem;
+        align-self: center;
+        padding: 0.5rem;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+
+        &:focus {
+            outline: 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .request-btn {
+      font-size: x-small;
+      padding: 0;
+    }
+  }
