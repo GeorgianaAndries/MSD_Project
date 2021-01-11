@@ -1,0 +1,27 @@
+<div class="page-container">
+    <div class="accordion-container">
+        <div class="accordion" id="accordionProfile">
+            <div class="card">
+                <div class="card-header acc-title" id="headingOne" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    <h2 class="mb-0">
+                        <button class="viewbtn" type="button">
+                            View all projects
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                    data-parent="#accordionProfile">
+                    <div class="card-body istoric-item" *ngFor="let proj of projects; let i = index">
+                        <p>Project name: {{proj.projectName}}</p>
+                        <button (click)="onPress(proj)"> <p>View project details</p> </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="comp-render" *ngIf="display">
+        <app-project-details [project]="projectCurent"></app-project-details>
+    </div>
+</div>

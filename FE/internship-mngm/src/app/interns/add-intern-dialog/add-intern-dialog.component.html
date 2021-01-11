@@ -4,22 +4,17 @@
         <form #newInternForm="ngForm">
             <div class="form-group">
                 <label for="nume">First name:</label>
-                <input type="text" class="form-control" id="nume" required [(ngModel)]="fromDialog.nume" #nume="ngModel"
+                <input type="text" class="form-control" id="nume" required [(ngModel)]="fromDialog.name" #nume="ngModel"
                     [ngModelOptions]="{standalone: true}">
             </div>
             <div class="form-group">
-                <label for="prenume">Last name:</label>
-                <input type="text" class="form-control" id="prenume" required [(ngModel)]="fromDialog.prenume"
-                    #prenume="ngModel" [ngModelOptions]="{standalone: true}">
-            </div>
-            <div class="form-group">
                 <label for="oras">Location:</label>
-                <input type="text" class="form-control" id="oras" [(ngModel)]="fromDialog.oras" #oras="ngModel"
+                <input type="text" class="form-control" id="oras" [(ngModel)]="fromDialog.city" #oras="ngModel"
                     [ngModelOptions]="{standalone: true}">
             </div>
             <div class="form-group">
                 <label for="tel">Phone:</label>
-                <input type="tel" class="form-control" id="tel" [(ngModel)]="fromDialog.tel" #tel="ngModel"
+                <input type="tel" class="form-control" id="tel" [(ngModel)]="fromDialog.telNo" #tel="ngModel"
                     [ngModelOptions]="{standalone: true}">
             </div>
             <div class="form-group">
@@ -38,7 +33,7 @@
                 <label for="project">Project: </label>
                 <select class="form-control" id="project" [(ngModel)]="fromDialog.project" #project="ngModel"
                     [ngModelOptions]="{standalone: true}">
-                    <option *ngFor="let proj of projects" [value]="proj">{{proj}}</option>
+                    <option *ngFor="let proj of projects" [value]="proj.projectName">{{proj.projectName}}</option>
                 </select>
             </div>
             <div class="form-group">
@@ -52,16 +47,16 @@
                 <label for="paid">Paid internship: </label>
                 <select class="form-control" id="paid" [(ngModel)]="fromDialog.paid" #paid="ngModel"
                     [ngModelOptions]="{standalone: true}">
-                    <option *ngFor="let p of paid" [value]="p">{{p}}</option>
+                    <option *ngFor="let p of paidv" [value]="p">{{p}}</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="start">Start date:</label>
-                <input type="date" id="start" name="start" [(ngModel)]="fromDialog.start">
+                <input type="date" id="start" name="start" [(ngModel)]="fromDialog.startDate">
             </div>
             <div class="form-group">
                 <label for="end">End date:</label>
-                <input type="date" id="end" name="end" [(ngModel)]="fromDialog.end">
+                <input type="date" id="end" name="end" [(ngModel)]="fromDialog.endDate">
             </div>
 
         </form>

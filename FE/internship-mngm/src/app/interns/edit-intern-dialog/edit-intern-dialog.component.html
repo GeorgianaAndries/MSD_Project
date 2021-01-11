@@ -4,19 +4,15 @@
         <form  editInternForm="ngForm">
             <div class="form-group">
                 <label for="nume">First name:</label>
-                <input type="text" class="form-control" id="nume" required [(ngModel)]="fromPage.nume"  name="nume">
-            </div>
-            <div class="form-group">
-                <label for="prenume">Last name:</label>
-                <input type="text" class="form-control" id="prenume" required [(ngModel)]="fromPage.prenume"  name="prenume">
+                <input type="text" class="form-control" id="nume" required [(ngModel)]="fromPage.name"  name="nume">
             </div>
             <div class="form-group">
                 <label for="oras">Location:</label>
-                <input type="text" class="form-control" id="oras" [(ngModel)]="fromPage.oras"  name="oras">
+                <input type="text" class="form-control" id="oras" [(ngModel)]="fromPage.city"  name="oras">
             </div>
             <div class="form-group">
                 <label for="tel">Phone:</label>
-                <input type="tel" class="form-control" id="tel" [(ngModel)]="fromPage.tel"  name="tel">
+                <input type="tel" class="form-control" id="tel" [(ngModel)]="fromPage.telNo"  name="tel">
             </div>
             <div class="form-group">
                 <label for="mail">Mail:</label>
@@ -31,7 +27,7 @@
             <div class="form-group">
                 <label for="project">Project: </label>
                 <select class="form-control" id="project" [(ngModel)]="fromPage.project"  name="project">
-                    <option *ngFor="let proj of projects" [value]="proj">{{proj}}</option>
+                    <option *ngFor="let proj of projects" [value]="proj.projectName">{{proj.projectName}}</option>
                 </select>
             </div>
             <div class="form-group">
@@ -48,11 +44,11 @@
             </div>
             <div class="form-group">
                 <label for="start">Start date:</label>
-                <input type="date" id="start" [(ngModel)]="fromPage.start" name="start">
+                <input type="date" id="start" [(ngModel)]="fromPage.startDate" name="start">
             </div>
             <div class="form-group">
                 <label for="end">End date:</label>
-                <input type="date" id="end" [(ngModel)]="fromPage.end" name="end">
+                <input type="date" id="end" [(ngModel)]="fromPage.endDate" name="end">
             </div>
 
         </form>

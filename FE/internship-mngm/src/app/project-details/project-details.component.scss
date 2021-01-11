@@ -1,0 +1,48 @@
+.container{
+    color: black;
+}
+.left {
+    border-right: 1px solid rgb(177, 142, 142);
+}
+.internDiv{
+    background: rgba(241, 203, 209, 0.836);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    max-width: 35rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+p {
+    margin:0;
+}
+.role{
+    font-style: italic;
+    font-size: small;
+}
+.nameintern{
+    font-size: larger;
+}
+.deleteIntern{
+    border: 0.2rem;
+    border-radius: 5%;
+    color: white;
+    background: #494B6B;
+    margin-left: 0.8rem;
+    align-self: center;
+    padding: 0.5rem;
+}
+.intern-left{
+    margin: 0.2rem;
+}
+.intern-right{
+    margin: 0.4rem;
+}
+.addmember {
+    border: 0.2rem;
+    border-radius: 5%;
+    color: white;
+    background: #494b6bf5;
+    align-self: center;
+    padding: 0.5rem;
+}

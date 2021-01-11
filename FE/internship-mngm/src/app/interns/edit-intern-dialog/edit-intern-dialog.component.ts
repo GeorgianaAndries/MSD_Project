@@ -2,22 +2,10 @@ import { Component, OnInit, Inject, Optional, } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-
-export interface Intern {
-  _id: string;
-  nume: string;
-  prenume: string;
-  oras: string;
-  role: string;
-  mail: string;
-  tel: string;
-  team: string;
-  project: string;
-  paid: string;
-  start: Date;
-  end: Date;
-}
-
+import { InternsService } from '../interns.service';
+import { Intern } from '../interns.component';
+import { ProjectsService } from '../../projects/projects.service';
+import { Project } from '../../projects/projects.component';
 
 @Component({
   selector: 'app-edit-intern-dialog',
@@ -26,31 +14,37 @@ export interface Intern {
 })
 export class EditInternDialogComponent implements OnInit {
   
-  teams = ['Team 1', 'Team 2', 'Team 3', 'Team 4'];
-  projects = ['Project 1', 'Project 2', 'Project 3', 'Project 4'];
-  roles = ['FE Developer', 'Tester', 'BE developer', 'Analyst'];
-  paid = ['Yes', 'No'];
+  teams: String[];
+  projects: Project[];
+  roles = ['FrontEnd Developer', 'Tester', 'BackEnd Developer', 'Analyst'];
+  paid = [true, false];
 
   fromPage: Intern;
-  ceva: string;
-
 
   constructor(
     public dialogRef: MatDialogRef<EditInternDialogComponent>,
     private router: Router,
+    private projectsService: ProjectsService,
+    public internService: InternsService,
     @Optional() @Inject(MAT_DIALOG_DATA) public data: any
     ) {
       this.fromPage = data.pageValues;
     }
 
   ngOnInit(): void {
+    this.projectsService.getAllTeams().subscribe(teamsList => {
+      this.teams = teamsList;
+    });
+    this.projectsService.getAllProjects().subscribe(projectsList => {
+      this.projects = projectsList;
+    });
   }
   public onCloseDialog(): void {
     this.dialogRef.close();
   }
   public onSaveChanges() {
     console.log(this.fromPage);
-    //this.requestsService.editRequest(this.fromPage).subscribe();
+    this.internService.editIntern(this.fromPage).subscribe();
     this.dialogRef.close();
   }
 

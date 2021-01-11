@@ -1,7 +1,6 @@
 <div class="req-container">
     <div class="btns-containter">
       <button mat-button class="request-btn" (click)="openAddInternDialog()">Add new intern</button>
-      <button mat-button class="request-btn">All interns</button>
       <div class="form-group" class="search-container">
         <input class="form-control" type="text" [(ngModel)]="searchText" placeholder="Caută o cerere..." class="search">
       </div>
@@ -13,24 +12,24 @@
   
           <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>{{intern.nume}} {{intern.prenume}}</mat-card-title>
+            <mat-card-title>{{intern.name}}</mat-card-title>
             <mat-card-subtitle>{{intern.role}}</mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
               <div class="detalii">
-                <p>Phone: {{intern.tel}} </p>
+                <p>Phone: {{intern.telNo}} </p>
                 <p class="mail"> Mail:
                   <a>{{intern.mail}}</a>
                 </p>
                 <p class="grrh">Project: {{intern.project}}</p>
                 <p class="grrh">Team: {{intern.team}}</p>
-                <p class="grrh">Start date: {{intern.start | date:'dd-MM-yyyy'}}</p>
-                <p class="grrh">End date: {{intern.end | date:'dd-MM-yyyy'}}</p>
+                <p class="grrh">Start date: {{intern.startDate | date:'dd-MM-yyyy'}}</p>
+                <p class="grrh">End date: {{intern.endDate | date:'dd-MM-yyyy'}}</p>
                 <p class="grrh">Paid internship: {{intern.paid}}</p>
                
             </div>
             <div class="btn-cerere">
-              <button >Delete</button>
+              <button (click)="onClickDelete(intern.id)" >Delete</button>
               <button (click)="openEditDialog(intern)">Edit intern</button>
             </div>
           </mat-card-content>

@@ -6,6 +6,10 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;   
 }
 
+#mat-dialog-0{
+    background: red;
+}
+
 textarea {
     resize: none;
     
@@ -43,4 +47,8 @@ input, select, textarea {
 
 input, select {
     margin-left: 0.5rem;
+}
+
+select.form-control:not([size]):not([multiple]) {
+    height: 35px;
 }

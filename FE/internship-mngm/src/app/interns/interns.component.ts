@@ -1,4 +1,4 @@
-import { Component, OnInit,  ViewChild, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { Observable } from 'rxjs';
 import {MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
@@ -6,20 +6,20 @@ import { MatTableDataSource } from '@angular/material/table';
 import { AddInternDialogComponent } from './add-intern-dialog/add-intern-dialog.component';
 import { EditInternDialogComponent } from './edit-intern-dialog/edit-intern-dialog.component';
 import { SearchInternPipe } from './search-intern.pipe';
+import { InternsService } from './interns.service';
 
 export interface Intern {
-  _id: string;
-  nume: string;
-  prenume: string;
-  oras: string;
+  id: Number;
+  name: string;
+  city: string;
   role: string;
   mail: string;
-  tel: string;
+  telNo: string;
   team: string;
   project: string;
-  paid: string;
-  start: Date;
-  end: Date;
+  paid: Boolean;
+  startDate: Date;
+  endDate: Date;
 }
 
 @Component({
@@ -27,50 +27,26 @@ export interface Intern {
   templateUrl: './interns.component.html',
   styleUrls: ['./interns.component.scss']
 })
-export class InternsComponent implements OnInit {
+export class InternsComponent implements OnInit, OnDestroy {
   DATA: Intern[];
   searchText: string;
-
-  interns: Intern[] = [{ 
-    _id: "123",
-    nume: "geor",
-    prenume: "andr",
-    oras: "iasi",
-    role: "developer",
-    mail: "asd@mdg.com",
-    tel: "12345678",
-    team: "buff",
-    project: "blaaa",
-    paid: "yes",
-    start: new Date(12-3-2020),
-    end: new Date(10-1-2021) },
-    { 
-      _id: "345",
-      nume: "gussss",
-      prenume: "taaab",
-      oras: "iasi",
-      role: "ml ceva",
-      mail: "asd@mdg.com",
-      tel: "12345678",
-      team: "buff",
-      project: "blaaa",
-      paid: "yes",
-      start: new Date(12-3-2020),
-      end: new Date(10-1-2021) }];
 
       @ViewChild(MatPaginator) paginator: MatPaginator;
       obs: Observable<any>;
       dataSource: MatTableDataSource<Intern>;
 
   constructor( private dialog: MatDialog,
-    private changeDetectorRef: ChangeDetectorRef, ) { }
+    private changeDetectorRef: ChangeDetectorRef,
+    private internService: InternsService ) { }
 
   ngOnInit(): void {
-    this.DATA = this.interns;
-    this.dataSource = new MatTableDataSource<Intern>(this.DATA);
-    this.changeDetectorRef.detectChanges();
-    this.dataSource.paginator = this.paginator;
-    this.obs = this.dataSource.connect();
+    this.internService.getAllInterns().subscribe(internsList => {
+      this.DATA = internsList;
+      this.dataSource = new MatTableDataSource<Intern>(this.DATA);
+      this.changeDetectorRef.detectChanges();
+      this.dataSource.paginator = this.paginator;
+      this.obs = this.dataSource.connect();
+    });
   }
 
   public openAddInternDialog(): void {
@@ -89,5 +65,14 @@ export class InternsComponent implements OnInit {
     console.log('detalii: ', details);
   }
 
+  public onClickDelete(reqId) {
+    this.internService.deleteIntern(reqId).subscribe();
+    window.location.reload();
+  }
+  ngOnDestroy() {
+    if (this.dataSource) {
+      this.dataSource.disconnect();
+    }
+  }
 
 }

@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4 left">
+            <h2>Project details</h2>
+            <p>Project name: {{project.projectName}}</p>
+            <p>Start date: {{project.startDate  | date:'dd-MM-yyyy'}}</p>
+            <p>End date: {{project.endDate  | date:'dd-MM-yyyy'}}</p>
+            <p>Client: {{project.client}}</p>
+            <p>Budget: {{project.salary}}</p>
+        </div>
+        <div class="col-8 right">
+            <h2>Project team members</h2>
+            <button class="addmember" (click)="onAddMemberClick(project)">Add new member</button>
+            <div class="internDiv" *ngFor="let intern of interns">
+                <div class="intern-left">
+                    <p class="nameintern">{{intern.name}}</p>
+                    <p class="role">{{intern.role}}</p>
+                </div>
+                <div class="intern-right">
+                    <button class="deleteIntern" (click)="onDeleteMember(intern)">Remove<span class="material-icons">person_remove</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

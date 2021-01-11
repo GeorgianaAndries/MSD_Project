@@ -1,7 +1,9 @@
 .custom-dialog-container{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
 }
-
+.mat-dialog-container{
+    background: red;
+}
 #mat-dialog-title-0 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;   
 }
@@ -43,4 +45,9 @@ input, select, textarea {
 
 input, select {
     margin-left: 0.5rem;
+    height: 35px;
+}
+
+select.form-control:not([size]):not([multiple]){
+    height: 35px;
 }

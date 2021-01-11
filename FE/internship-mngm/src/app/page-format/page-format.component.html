@@ -10,11 +10,7 @@
 	</div>
 	
 	<div class="second-half">
-		<button mat-icon-button class="profile-btn">
-			<mat-icon class="profile-circle">account_circle</mat-icon>
-		</button>
-		<span class="nume-pren"> nume prenume</span>
-		<button class="tlb-btn">Log out</button>
+		<button class="tlb-btn" [routerLink]="['/login']">Log out</button>
 	</div>
 </mat-toolbar>
 
@@ -22,7 +18,7 @@
 	<mat-sidenav #sidenav class="app-sidenav" mode="side" opened="true">
 		<mat-nav-list>
 			<mat-list-item class="item-list">
-				<span class="full-width" *ngIf="isExpanded || isShowing">Home</span>
+				<span class="full-width" *ngIf="isExpanded || isShowing" [routerLink]="['/management', 'home']">Home</span>
 				<mat-icon mat-list-icon>home</mat-icon>
 			</mat-list-item>
         </mat-nav-list>

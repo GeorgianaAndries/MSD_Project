@@ -13,6 +13,11 @@ import { ProjectsComponent } from './projects/projects.component';
 import { EditInternDialogComponent } from './interns/edit-intern-dialog/edit-intern-dialog.component';
 import { AddInternDialogComponent } from './interns/add-intern-dialog/add-intern-dialog.component';
 import { SearchInternPipe } from './interns/search-intern.pipe';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AddInternProjectComponent } from './project-details/add-intern-project/add-intern-project.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +28,10 @@ import { SearchInternPipe } from './interns/search-intern.pipe';
     EditInternDialogComponent,
     AddInternDialogComponent,
     SearchInternPipe,
+    ProjectDetailsComponent,
+    HomeComponent,
+    LoginComponent,
+    AddInternProjectComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +40,7 @@ import { SearchInternPipe } from './interns/search-intern.pipe';
     AngularMaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
