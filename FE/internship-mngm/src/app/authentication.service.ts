@@ -14,7 +14,7 @@ export class AuthenticationService {
   constructor(private http: HttpClient, private router: Router) { }
 
   public login(user: Credentials): Observable<any> {
-    const url = `${'users-validation'}/${user.mail}/${user.password}`;
+    const url = `${'http://localhost:8080/users-validation'}/${user.mail}/${user.password}`;
     const base = this.http.post(url, user);
     const request = base.pipe(
       map((data: Credentials) => {

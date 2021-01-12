@@ -1,0 +1,27 @@
+[{ 
+    "id": 1,
+    "name": "geor",
+    "city": "iasi",
+    "role": "developer",
+    "mail": "asd@mdg.com",
+    "telNo": "12345678",
+    "team": "buff",
+   "project": "blaaa",
+    "paid": true,
+    "startDate": "12-3-2020",
+    "endDate": "10-1-2021" 
+    },
+    { 
+      "id": 34,
+      "name": "gussss",
+      "city": "iasi",
+      "role": "ml ceva",
+      "mail": "asd@mdg.com",
+      "telNo": "12345678",
+      "team": "buff",
+      "project": "blaaa",
+      "paid": true,
+      "startDate": "12-3-2020",
+      "endDate": "10-1-2021"
+    }
+]

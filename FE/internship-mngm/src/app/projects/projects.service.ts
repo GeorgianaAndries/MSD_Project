@@ -14,26 +14,26 @@ export class ProjectsService {
               private router: Router,) { }
 
   public getAllProjects(): Observable<any>{
-    return this.http.get<any>('/project');
+    return this.http.get<any>('http://localhost:8080/project');
   }
 
   public getProject(projectId): Observable<any> {
-    const url = `${'projects'}/${projectId}`;
+    const url = `${'http://localhost:8080/projects'}/${projectId}`;
     return this.http.get<any>(url);
   }
 
   public getProjectTeam(projectName): Observable<any> {
-    const url = `${'/interns-by-project'}/${projectName}`;
+    const url = `${'http://localhost:8080/interns-by-project'}/${projectName}`;
     return this.http.get<any>(url);
   }
 
   public deleteMember(InternId: string): Observable<any> {
-    const url = `${'interns-project'}/${InternId}`;
+    const url = `${'http://localhost:8080/interns-project'}/${InternId}`;
     return this.http.delete<any>(url);
   }
 
   public getAllTeams(): Observable<any>{
-    return this.http.get<any>('/all-team-names');
+    return this.http.get<any>('http://localhost:8080/all-team-names');
   }
 
 

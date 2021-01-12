@@ -13,20 +13,20 @@ export class InternsService {
               private router: Router,) { }
 
   public getAllInterns(): Observable<any>{
-    return this.http.get<any>('/intern');
+    return this.http.get<any>('http://localhost:8080/intern');
   }
 
   public postIntern(details: Intern): Observable<any> {
-    return this.http.post<any>('/interns', details);
+    return this.http.post<any>('http://localhost:8080/interns', details);
   }
 
   public editIntern(details: Intern): Observable<Intern> {
-    const url = '/intern_update';
+    const url = 'http://localhost:8080/intern_update';
     return this.http.put<Intern>(url, details);
   }
 
   public deleteIntern(InternId: string): Observable<any> {
-    const url = `${'interns'}/${InternId}`;
+    const url = `${'http://localhost:8080/interns'}/${InternId}`;
     return this.http.delete<any>(url);
   }
 }
