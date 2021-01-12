@@ -42,6 +42,11 @@ public class ProjectService {
 	    projectRepository.save(project);
    }
    
+	
+  public ProjectDto getProject(int id){
+	  Project project = projectRepository.findById(id);
+	  return transformToDto(project);
+   }
 
    private ProjectDto transformToDto(Project source){
       return modelMapper.map(source,ProjectDto.class);

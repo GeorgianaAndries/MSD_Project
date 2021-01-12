@@ -39,7 +39,12 @@ public class ProjectController {
 				return projectService.getAllProjects();
 		}
 		
-		
+			@GetMapping("/project-by-id/{id}")
+		private ProjectDto getProject(int id){
+				return projectService.getProject(id);
+		}
+	
+	
 		@DeleteMapping("/projects/{project_id}")
 		private void deleteProjectById(@PathVariable("project_id") int projectId){
 				projectService.delete(projectId);
