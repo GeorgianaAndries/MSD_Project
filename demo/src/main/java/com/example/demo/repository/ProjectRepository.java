@@ -8,4 +8,5 @@ import com.example.demo.model.Project;
 @Repository
 public interface ProjectRepository extends JpaRepository<Project, Integer> {
 
+  Project findById(int id);
 }
